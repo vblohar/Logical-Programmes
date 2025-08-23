@@ -6,8 +6,6 @@ public class AnagramBySorting{
         String anagram1 = "maam";
         String anagram2 = "mamal";
 
-        anagram1 = sortString.ana
-
         char[] charArrayAnagram1 = anagram1.toCharArray();
         char[] charArrayAnagram2 = anagram2.toCharArray();
 
