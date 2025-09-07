@@ -110,6 +110,27 @@ public class MyHashMap<K, V> {
 		return false;
 
 	}
+	
+	public V remove(Object k) {
+		int h = hash(k);
+		int i = indexFor(h, table.length);
+		
+		Node<K, V> prev = null, e = table[i];
+		
+		while(e != null) {
+			if(e.hash == h && Objects.equals(e.key, k)) {
+				if(prev == null) { table[i] = e.next;}else
+				prev.next = e.next;
+				size--;
+				return e.value;
+			}
+			
+			prev = e;
+			e = e.next;
+		}
+		
+		return null;
+	}
 
 	public void resize() {
 		int newCap = table.length << 1;
@@ -144,13 +165,15 @@ public class MyHashMap<K, V> {
 //		myHashMap.put(2, "Shailesh");
 //		myHashMap.put(4, null);
 
-		for (int i = 0; i < 12; i++) {
+		for (int i = 0; i < 18; i++) {
 			myHashMap.put(i, "Vaibhav");
 
 		}
+		
+		System.out.println(myHashMap.remove(17));
 
 		System.out.println(myHashMap.size());
-		System.out.println(myHashMap);
+		System.out.println(myHashMap);		
 	}
 
 }
