@@ -8,7 +8,7 @@ public class Fibonancci {
         if(n <= 1){
             return n;
         }
-        return fibonacciSeries(n-1) + fibonacciSeries(n-1);
+        return fibonacciSeries(n-1) + fibonacciSeries(n-2);
     };
 
     public static void main(String[] args) {
@@ -24,8 +24,11 @@ public class Fibonancci {
 //           for (int i = 0; i < n; i++) {
 //            System.out.println(fibonacciSeries(i));
 //        }
+        int n = 10;
+        for (int i = 0; i < n; i++) {
+            System.out.print(fibonacciSeries(i) + ", ");
+        }
 
-        System.out.println(fibonacciSeries(5));
     }
 }
 
